@@ -22,19 +22,6 @@ gsap.registerPlugin(ScrollTrigger, SplitText, Flip, Draggable);
 //   ease: "bounce.out"
 // });
 
-gsap.fromTo(".box", {
-  x:200,
-  rotation:360,
-  duration:1,
-  opacity:0,
-  scale:0.5,
-},{
-  x:400,
-  rotation:360,
-  opacity:1,
-  scale:1
-})
-
 
 const counter  = {value:0};
 gsap.to("cunter", {
@@ -72,3 +59,15 @@ document.querySelectorAll(".btn").forEach(btn => {
   });
 })
 
+
+gsap.to(".box", {
+  x:900,
+  duration:1.5,
+  delay:0.3,
+  ease:"power3.out",
+  stagger:{
+    each:0.5,
+    from:"center",
+    
+  }
+})
