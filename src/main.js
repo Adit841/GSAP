@@ -116,31 +116,44 @@ gsap.registerPlugin(ScrollTrigger, SplitText, Flip, Draggable);
 
   
 
+// gsap.to(".box", {
+//   x: 300,
+//   onStart: () => console.log("started"),
+//   onUpdate: () => console.log("every frame"),
+//   onComplete: () => console.log("done"),
+//   onRepeat: () => console.log("looped again")
+// });
+
+
+// const obj = {
+//   value:0,
+// };
+
+
+// const counter = document.querySelector(".loader-count h1");
+
+
+// gsap.to(obj, {
+//   value:100,
+//   duration:5,
+//   ease:"none",
+//   onUpdate: () =>{
+//     counter.textContent = `${Math.round(obj.value)}%`;
+//   },
+//   onComplete: () =>{
+//     counter.textContent = "100%";
+//   }
+// })
+
+
+
+
+
 gsap.to(".box", {
-  x: 300,
-  onStart: () => console.log("started"),
-  onUpdate: () => console.log("every frame"),
-  onComplete: () => console.log("done"),
-  onRepeat: () => console.log("looped again")
-});
-
-
-const obj = {
-  value:0,
-};
-
-
-const counter = document.querySelector(".loader-count h1");
-
-
-gsap.to(obj, {
-  value:100,
-  duration:5,
-  ease:"none",
-  onUpdate: () =>{
-    counter.textContent = `${Math.round(obj.value)}%`;
-  },
-  onComplete: () =>{
-    counter.textContent = "100%";
+  x:400,
+  duration:1.5,
+  ease:"power3.out",
+  scrollTrigger:{
+    trigger:".box", 
   }
 })
