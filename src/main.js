@@ -73,27 +73,27 @@ gsap.registerPlugin(ScrollTrigger, SplitText, Flip, Draggable);
 //   }
 // })
 
-const tl = gsap.timeline({
-  paused:true,
-});
+// const tl = gsap.timeline({
+//   paused:true,
+// });
 
-tl.to(".box1", {
-  x:500,
-  duration:1.5,
-  ease:"power3.out",
-}).to(".box2", {
-  x:500,
-  duration:1.5,
-  ease:"power3.out",
-}).to(".box3", {
-  x:500,
-  duration:1.5,
-  ease:"power3.out",
-}).to(".box4", {
-  x:500,
-  duration:1.5,
-  ease:"power3.out",
-});
+// tl.to(".box1", {
+//   x:500,
+//   duration:1.5,
+//   ease:"power3.out",
+// }).to(".box2", {
+//   x:500,
+//   duration:1.5,
+//   ease:"power3.out",
+// }).to(".box3", {
+//   x:500,
+//   duration:1.5,
+//   ease:"power3.out",
+// }).to(".box4", {
+//   x:500,
+//   duration:1.5,
+//   ease:"power3.out",
+// });
 // tl.to(".box1", { x: 100 })
 //   .to(".box2", { x: 100 }, "-=0.3")   // start 0.3s before the previous tween ends (overlap)
 //   .to(".box3", { x: 100 }, "+=0.2")   // start 0.2s after the previous tween ends (gap)
@@ -115,3 +115,11 @@ tl.to(".box1", {
 //   }, 1000);
 
   
+
+gsap.to(".box", {
+  x: 300,
+  onStart: () => console.log("started"),
+  onUpdate: () => console.log("every frame"),
+  onComplete: () => console.log("done"),
+  onRepeat: () => console.log("looped again")
+});
