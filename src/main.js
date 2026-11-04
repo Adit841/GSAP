@@ -23,51 +23,72 @@ gsap.registerPlugin(ScrollTrigger, SplitText, Flip, Draggable);
 // });
 
 
-const counter  = {value:0};
-gsap.to("cunter", {
-  value:500,
-  duration:3,
-  onUpdate: () => console.log(Math.round(counter.value))
-})
+// const counter  = {value:0};
+// gsap.to("cunter", {
+//   value:500,
+//   duration:3,
+//   onUpdate: () => console.log(Math.round(counter.value))
+// })
 
 
-document.querySelectorAll(".btn").forEach(btn => {
-  btn.addEventListener("mouseenter",() => {
-    gsap.to(btn, {
-      scale:1.1,
-      duration:0.5,
-      ease:"back.out(2)"
-    });
-    gsap.to(".btn--scale", {
-      backgroundColor: "red", color: "blue",fontSize: "20px",duration:1.3, ease:"back.out(2)"
-    });
+// document.querySelectorAll(".btn").forEach(btn => {
+//   btn.addEventListener("mouseenter",() => {
+//     gsap.to(btn, {
+//       scale:1.1,
+//       duration:0.5,
+//       ease:"back.out(2)"
+//     });
+//     gsap.to(".btn--scale", {
+//       backgroundColor: "red", color: "blue",fontSize: "20px",duration:1.3, ease:"back.out(2)"
+//     });
 
-  });
-  btn.addEventListener("mouseleave",() => {
-    gsap.to(btn, {
-      scale:1,
-      duration:0.5,
-      ease:"back.in(2)"
-    });
-    gsap.to(".btn--scale", {
-      backgroundColor: "white",
-      color: "black",
-      fontSize: "16px",
-      duration:1.3, 
-      ease:"back.out(2)"
-    });
-  });
-})
+//   });
+//   btn.addEventListener("mouseleave",() => {
+//     gsap.to(btn, {
+//       scale:1,
+//       duration:0.5,
+//       ease:"back.in(2)"
+//     });
+//     gsap.to(".btn--scale", {
+//       backgroundColor: "white",
+//       color: "black",
+//       fontSize: "16px",
+//       duration:1.3, 
+//       ease:"back.out(2)"
+//     });
+//   });
+// })
 
 
-gsap.to(".box", {
-  x:900,
+// gsap.to(".box", {
+//   x:400,
+//   duration:1.5,
+//   delay:0.3,
+  
+//   stagger:{
+//     each:0.5,
+//     from:"center",
+//     grid:"auto",
+//     ease:"power3.out",
+//   }
+// })
+
+const tl = gsap.timeline();
+
+tl.to(".box1", {
+  x:500,
   duration:1.5,
-  delay:0.3,
   ease:"power3.out",
-  stagger:{
-    each:0.5,
-    from:"center",
-    
-  }
-})
+}).to(".box2", {
+  x:500,
+  duration:1.5,
+  ease:"power3.out",
+}).to(".box3", {
+  x:500,
+  duration:1.5,
+  ease:"power3.out",
+}).to(".box4", {
+  x:500,
+  duration:1.5,
+  ease:"power3.out",
+});
