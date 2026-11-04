@@ -73,7 +73,9 @@ gsap.registerPlugin(ScrollTrigger, SplitText, Flip, Draggable);
 //   }
 // })
 
-const tl = gsap.timeline();
+const tl = gsap.timeline({
+  paused:true,
+});
 
 tl.to(".box1", {
   x:500,
@@ -92,3 +94,24 @@ tl.to(".box1", {
   duration:1.5,
   ease:"power3.out",
 });
+// tl.to(".box1", { x: 100 })
+//   .to(".box2", { x: 100 }, "-=0.3")   // start 0.3s before the previous tween ends (overlap)
+//   .to(".box3", { x: 100 }, "+=0.2")   // start 0.2s after the previous tween ends (gap)
+//   .to(".box4", { x: 100 }, 0)         // start at the absolute 0-second mark of the timeline
+//   .to(".box5", { x: 100 }, "<")       // start at the same time as the previous tween started
+//   .to(".box6", { x: 100 }, "myLabel"); // start at a named label
+
+
+//   setTimeout(() => {
+
+//     tl.play();
+//     tl.pause();
+//     tl.reverse();
+//     tl.restart();
+//     tl.seek(0.5);        // jump to 0.5 seconds
+//     tl.progress(0.5);     // jump to 50% progress
+//     tl.timeScale(2);      // play at 2x speed
+//     tl.timeScale(0.5);    // play at half speed
+//   }, 1000);
+
+  
