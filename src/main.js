@@ -123,3 +123,24 @@ gsap.to(".box", {
   onComplete: () => console.log("done"),
   onRepeat: () => console.log("looped again")
 });
+
+
+const obj = {
+  value:0,
+};
+
+
+const counter = document.querySelector(".loader-count h1");
+
+
+gsap.to(obj, {
+  value:100,
+  duration:5,
+  ease:"none",
+  onUpdate: () =>{
+    counter.textContent = `${Math.round(obj.value)}%`;
+  },
+  onComplete: () =>{
+    counter.textContent = "100%";
+  }
+})
