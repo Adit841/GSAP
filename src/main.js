@@ -154,6 +154,11 @@ gsap.to(".box", {
   duration:1.5,
   ease:"power3.out",
   scrollTrigger:{
-    trigger:".box", 
+    trigger:".box",
+    start:"top top",
+    end:"bottom bottom",
+    scrub:true,
+    markers:true,
+    pin:true,
   }
 })
