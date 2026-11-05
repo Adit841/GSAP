@@ -155,10 +155,11 @@ gsap.to(".box", {
   ease:"power3.out",
   scrollTrigger:{
     trigger:".box",
-    start:"top top",
-    end:"bottom bottom",
-    scrub:true,
+    onEnter: () => console.log("entered"),
+    onLeave: () => console.log("left, scrolling down"),
+    onEnterBack: () => console.log("re-entered, scrolling up"),
+    onLeaveBack: () => console.log("left, scrolling up"),
     markers:true,
-    pin:true,
+   
   }
 })
